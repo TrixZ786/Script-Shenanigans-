@@ -3,3 +3,5 @@ string $cylinder[] = `polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0
 select $cylinder;
 move 0 1 0;
 rename $cylinder[0] "startingoff";
+scale -r 5 -y 1 -z 5;
+rotate -x 10;
