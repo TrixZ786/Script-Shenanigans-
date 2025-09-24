@@ -1,0 +1,5 @@
+// create Cylinder
+string $cylinder[] = `polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1`;
+select $cylinder;
+move 0 1 0;
+rename $cylinder[0] "startingoff";
