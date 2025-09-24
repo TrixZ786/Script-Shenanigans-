@@ -2,6 +2,18 @@
 string $cylinder[] = `polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1`;
 select $cylinder;
 move 0 1 0;
-rename $cylinder[0] "startingoff";
+rename $cylinder[0] "Binx";
 scale -r 5 -y 1 -z 5;
 rotate -x 10;
+
+// Get everything Selected
+string $sel[] = `ls - sl`;
+// Create our loop
+for ($all in $sel){
+    //do something - use $all to identify objects 
+    select $all;
+    duplicate;
+    rotate 70 0 0;
+    move -r 0 5 0;
+    scale -r 0 50 0;
+}
