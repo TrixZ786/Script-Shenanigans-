@@ -17,3 +17,103 @@ for ($all in $sel){
     move -r 0 5 0;
     scale -r 0 50 0;
 }
+
+// create a variable $staff with the values Geralt, Superman and NapoleonSolo
+string $staff[1] = {"Geralt", "Superman", "NapoleonSolo"};
+print $staff[1]; // print the second value
+
+string $ChooseYourFighter[0] = `polyCube -name "ChooseYourFighter"`;
+print $ChooseYourFighter[0];
+string $cube = $ChooseYourFighter[0];
+move 0 1 0 -r $SChooseYourFighter[0];
+
+int $one = 2;
+int $calc = $one * 10;
+print $calc;
+
+string $sel[] = `ls - sl`;
+move 0 2 0 $sel;
+
+setAttr ($cube+".primaryVisibility") 0;
+
+// Basic UI Example: My Very First UI
+
+// OPTIONAL: Delete any existing window with this name
+if (`window -exists myVeryFirstUI`) {
+    deleteUI -window myVeryFirstUI;
+}
+
+// Define a procedure for "Come On Do Something"
+global proc myComeOnDoSomething() {
+    // add your code here
+    print("Superman Rivals Geralt and NapoleonSolo unless there is green Kryptonite.\n");
+}
+
+// Build the window
+window -title "My Super Awesome UI" -widthHeight 300 100 myAmazingUI;
+columnLayout -adjustableColumn true -rowSpacing 10;
+    button -label "Do Something" -command "myDoSomething()";
+    button -label "Do Something" -command "print(\"Doing something!\\n\")";
+setParent ..;
+
+// Show the window
+showWindow mySuperAwesomeUI;
+
+
+// Basic UI Example: My Cute UI
+
+global string $ChooseYourFighter[]; // declare global variable
+
+// Delete any existing window with this name
+if (`window -exists myCuteUI`) {
+    deleteUI -window myCuteUI;
+}
+
+// Define a procedure for "createCube"
+global proc createCube() {
+    // createCube
+    global string $ChooseYourFighter[]; // Access the global variable
+    $ChooseYourFighter = `polyCube -name "ChooseYourFighter"`;
+}
+
+// Define a procedure for "moveCubes"
+global proc moveCubes() {
+    global string $ChooseYourFighter[]; // Access the global variable
+    // move Cubes
+    string $sel[] = `ls -sl`;
+
+    for ($each in $sel){
+        if ($each = $ChooseYourFighter[0]) {
+            move -r 0 2 0 $each;
+        }
+        else {
+            move -r 0 -2 0 $each;
+        }
+    }
+}
+
+
+
+
+
+
+// Delete existing window if it exists
+if (`window -exists ChallengerUI`) {
+    deleteUI -window ChallengerUI;
+}
+
+// Procedure to create a cube named ChooseYourChallenger
+global proc createChallenger() {
+    string $cube[] = `polyCube -name "ChooseYourChallenger"`;
+    print ("Created: " + $cube[0] + "\n");
+}
+
+// Build the UI window
+window -title "Challenger UI" -widthHeight 200 100 ChallengerUI;
+columnLayout -adjustableColumn true -rowSpacing 10;
+
+//  Simple button to create the cube
+button -label "ChooseYourChallenger" -command "createChallenger()";
+
+setParent ..;
+showWindow ChallengerUI;
