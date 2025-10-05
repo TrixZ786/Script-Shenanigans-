@@ -25,7 +25,7 @@ print $staff[1]; // print the second value
 string $ChooseYourFighter[0] = `polyCube -name "ChooseYourFighter"`;
 print $ChooseYourFighter[0];
 string $cube = $ChooseYourFighter[0];
-move 0 1 0 -r $SChooseYourFighter[0];
+move 0 1 0 -r $ChooseYourFighter[0];
 
 int $one = 2;
 int $calc = $one * 10;
